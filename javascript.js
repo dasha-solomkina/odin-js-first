@@ -9,7 +9,7 @@ let result;
 let scorePlayer;
 let scoreComputer;
 
-// Redo the function to return the number and not the string
+// Function to play 1 round and return the number based on the win
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         scorePlayer = 0;
@@ -28,7 +28,7 @@ return {scorePlayer, scoreComputer, result};
 }
 
 
-// Function game - 5 games - loop
+// Function for the game of 5 rounds (loop)
 let countWinsPlayer = 0;
 let countWinsComputer = 0;
 
@@ -51,6 +51,8 @@ for (let i = 0; i < 5; i++) {
     console.log("Conputer score: " + countWinsComputer);
   }
 
+// Alert the winner
+
 if (countWinsPlayer > countWinsComputer) {
     alert("You have won the game. Congrats!")
 } else if (countWinsComputer > countWinsPlayer) {
@@ -58,7 +60,3 @@ if (countWinsPlayer > countWinsComputer) {
 } else {
     alert("It is a draw, play one more time to determine the winner")
 }
-
-
-
-
