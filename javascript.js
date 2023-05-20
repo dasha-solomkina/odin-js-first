@@ -5,24 +5,6 @@
     return options[index]
 }
 
-
-
-
-// function with the string
-/*
-function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        result = "It is a draw, please play once more";
-    } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "scissors" && computerSelection == "rock") || ((playerSelection == "paper" && computerSelection == "scissors"))) {
-        result = "You lost, sorry, " + computerSelection + " beats " + playerSelection
-    } else if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")) {
-        result = "you WON! " + playerSelection + " beats " + computerSelection;
-    } else {
-        result = "something went wrooooong";
-    }
-return result;
-} */
-
 let result;
 let scorePlayer;
 let scoreComputer;
@@ -39,39 +21,43 @@ function playRound(playerSelection, computerSelection) {
         scorePlayer = 1;
         scoreComputer = 0;
     } else {
-        result = "something went wrooooong";
+        scorePlayer = 0;
+        scoreComputer = 0;
     }
 return {scorePlayer, scoreComputer, result};
 }
 
 
-
-
-// Function game - 5 games - loop test
-
-
-
-
+// Function game - 5 games - loop
+let countWinsPlayer = 0;
+let countWinsComputer = 0;
 
 for (let i = 0; i < 5; i++) {
-    //choose one option for Computer and Players imput
     let message = prompt("Type: Rock, Paper or Scissors");
     let playerSelection = message.toLocaleLowerCase();
-    console.log(playerSelection);
+    console.log("Players choice: " + playerSelection);
     const computerSelection = getComputerChoice();
-    console.log(computerSelection);
-    console.log(playRound(playerSelection, computerSelection));
-    let outputTest = playRound(playerSelection, computerSelection);
-    console.log(outputTest.scorePlayer); // convert it to the numbers and make ++
-      
+    console.log("Computer`s choice: " + computerSelection);
+    let scorePlayerN = Number(playRound(playerSelection, computerSelection).scorePlayer);
+    let scoreComputerN = Number(playRound(playerSelection, computerSelection).scoreComputer);
 
+    if (scorePlayerN == 1) {
+        countWinsPlayer = countWinsPlayer + 1;
+    } else if (scoreComputerN == 1) {
+        countWinsComputer = countWinsComputer + 1;
+    }
 
-
-
-
+    console.log("Players score: " + countWinsPlayer);
+    console.log("Conputer score: " + countWinsComputer);
   }
 
-
+if (countWinsPlayer > countWinsComputer) {
+    alert("You have won the game. Congrats!")
+} else if (countWinsComputer > countWinsPlayer) {
+    alert("Sorry, you lost :(")
+} else {
+    alert("It is a draw, play one more time to determine the winner")
+}
 
 
 
