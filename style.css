@@ -1,0 +1,13 @@
+html {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background: url("background1.jpg") bottom center;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    font-size: 24px;
+}
