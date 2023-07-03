@@ -29,7 +29,14 @@ h3 {
     font-size: 22px;
 }
 
+#player-choice>img,
+#computer-choice>img {
+    width: 100px;
+}
 
+.icons {
+    margin: 40px 10px;
+}
 
 .score,
 .icons {
@@ -47,7 +54,7 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 36px;
-    margin: 140px;
+    margin: 100px;
 }
 
 .column {
