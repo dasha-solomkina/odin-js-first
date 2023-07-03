@@ -1,3 +1,41 @@
+// Ask the player for the name and update the name on the page
+/* let playerName = prompt("what is your name?")
+const playerNameJ = document.querySelector("#player-score");
+playerNameJ.textContent = playerName + ":"; 
+*/
+
+const choices = document.querySelectorAll(".column");
+
+//let playerChoice
+
+choices.forEach((column) => {
+    column.addEventListener("click", () => {
+        playerChoice = column.innerText; // returns the name of the Choice
+        if (playerChoice == "Paper") {
+            console.log("test - PAPER")
+        };
+    });
+});
+
+
+
+
+/*
+
+const playerIcon = document.querySelector("#player-choice");
+console.log(playerIcon.textContent.trim());
+
+if (playerChoice == "Paper") {
+    //playerIcon.textContent = "PAPER";
+    console.log("test - PAPER")
+};
+*/
+
+// choices.addEventListener('click', (e) => {
+   // alert(e);
+//})
+
+ /*
  // Function to return Computer choice
  function getComputerChoice() {
     let options = ["rock", "paper", "scissors"];
@@ -60,3 +98,5 @@ if (countWinsPlayer > countWinsComputer) {
 } else {
     alert("It is a draw, play one more time to determine the winner")
 }
+
+*/
