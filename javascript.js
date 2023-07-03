@@ -5,44 +5,40 @@ playerNameJ.textContent = playerName + ":";
 */
 
 const choices = document.querySelectorAll(".column");
+const iconP = document.querySelector("#player-choice-img");
 
-//let playerChoice
+// change the Player Icon based on the choice
+function showPlayerChoice(a){
+    if (a == "Paper") {
+        iconP.src = "paperw.png";
+    } else if (a == "Rock") {
+        iconP.src = "rockw.png";
+    } else {
+        iconP.src = "scissorsw.png";
+    }
+};
 
+// listen to the PLayers choice and show the choice on the page
 choices.forEach((column) => {
     column.addEventListener("click", () => {
         playerChoice = column.innerText; // returns the name of the Choice
-        if (playerChoice == "Paper") {
-            console.log("test - PAPER")
-        };
+        showPlayerChoice(playerChoice);
     });
 });
 
 
 
-
-/*
-
-const playerIcon = document.querySelector("#player-choice");
-console.log(playerIcon.textContent.trim());
-
-if (playerChoice == "Paper") {
-    //playerIcon.textContent = "PAPER";
-    console.log("test - PAPER")
-};
-*/
-
-// choices.addEventListener('click', (e) => {
-   // alert(e);
-//})
-
- /*
  // Function to return Computer choice
  function getComputerChoice() {
     let options = ["rock", "paper", "scissors"];
     let index = Math.floor(Math.random()* 3)
     return options[index]
-}
+};
+console.log(getComputerChoice())
 
+
+
+/* 
 let result;
 let scorePlayer;
 let scoreComputer;
