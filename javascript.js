@@ -96,9 +96,12 @@ choices.forEach((column) => {
         roundResult = compareChoices(playerChoice, computerRoundChoice);
         updateCount(roundResult.scorePlayer, roundResult.scoreComputer);
         roundStatusUpdate(roundResult.scorePlayer, roundResult.scoreComputer);
+        if(correntPlayerScore == 5) {
+            alert("you won!"); 
+        } else if (correntComputerScore == 5) {
+            alert("sorry, you lost")
+        };
     });
 });
 
 // add a stop when one of the scores reaches 5 points
-
-
