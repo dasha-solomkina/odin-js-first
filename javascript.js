@@ -75,7 +75,7 @@ function updateCount(a, b) {
 };
 
 // update the status
-const roundStatus = document.querySelector("#status-update");
+const roundStatus = document.querySelector("#status-update-text");
 function roundStatusUpdate(scoreP, scoreC) {
     if ((scoreP == 1) && (scoreC == 0)) {
         roundStatus.textContent = "Here you go!";
@@ -104,4 +104,3 @@ choices.forEach((column) => {
     });
 });
 
-// add a stop when one of the scores reaches 5 points

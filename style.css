@@ -1,8 +1,8 @@
 html {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    /* background: url("background7.svg") bottom center; */
-    background-color: #381068;
+    background: url("background9.svg") bottom center;
     background-size: cover;
+    background-repeat: no-repeat;
     color: white;
     margin: 0;
     padding: 0;
@@ -14,11 +14,13 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
     text-align: center;
-    font-size: 34px;
+    font-size: 30px;
 }
 
 img {
@@ -27,6 +29,10 @@ img {
 
 h3 {
     font-size: 22px;
+}
+
+h1 {
+    margin-bottom: 10px;
 }
 
 #player-choice>img,
@@ -54,7 +60,7 @@ h3 {
     display: flex;
     justify-content: center;
     gap: 36px;
-    margin: 100px;
+    margin-top: 50px;
 }
 
 .column {
