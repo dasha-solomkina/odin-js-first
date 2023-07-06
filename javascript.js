@@ -1,5 +1,5 @@
 // ask the player's name and update the name on the page
-/*let playerName = prompt("what is your name?")
+/* let playerName = prompt("what is your name?")
 const playerNameJ = document.querySelector("#player-score");
 playerNameJ.textContent = playerName + ":"; 
 */
