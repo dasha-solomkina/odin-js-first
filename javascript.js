@@ -34,9 +34,7 @@ function getComputerChoice() {
     return computerRoundChoice;
 };
 
-//let computerChoice = getComputerChoice();
-
-// funciton to compare the choices and 
+// compare the choices and update the current score
 function compareChoices(player, computer) {
     if (player === computer) {
         scorePlayer = 0;
@@ -81,36 +79,15 @@ function roundStatusUpdate(scoreP, scoreC) {
     };
 };
 
-// listen to the PLayers choice and show the choice on the page
-choices.forEach((column) => {
-    column.addEventListener("click", () => {
-        playerChoice = column.innerText; // returns the name of the Choice
-        getComputerChoice();
-        showPlayerChoice(playerChoice);
-        showComputerChoice(computerRoundChoice);
-        roundResult = compareChoices(playerChoice, computerRoundChoice);
-        updateCount(roundResult.scorePlayer, roundResult.scoreComputer);
-        roundStatusUpdate(roundResult.scorePlayer, roundResult.scoreComputer);
-        showWinner(currentPlayerScore, currentComputerScore);
-        // if(currentPlayerScore == 5) {
-        //     alert("you won!"); 
-        // } else if (currentComputerScore == 5) {
-        //     alert("sorry, you lost")
-        // };
-    });
-});
-
-
-
+// open a pop-up asking a name when the page is loaded
 window.onload = function() {
     setTimeout(function() {
       var popupOverlay = document.getElementById('popupOverlay');
       popupOverlay.classList.remove('hidden');
     }, 1000); // Adjust the delay (in milliseconds) as desired
 };
-  
 
-// Ask for the name and show on the page
+// ask for the name and show on the page
 document.getElementById('myForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent page refresh
   
@@ -126,7 +103,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     popupOverlay.classList.add('hidden');
 });
 
-
+// open a pop-up in the end to notify the winner
 function showWinner(playerScore, computerScore) {
     if (playerScore == 5) {
         let popupOverlayTwo = document.getElementById('popupOverlay2');
@@ -141,7 +118,22 @@ function showWinner(playerScore, computerScore) {
     }
 };
 
+// replay 
 const replayButton = document.querySelector("button");
 replayButton.addEventListener("click", function(e) {
     location.reload();
-})
+});
+
+// listen to the PLayers choice and show the choice on the page
+choices.forEach((column) => {
+    column.addEventListener("click", () => {
+        playerChoice = column.innerText; // returns the name of the Choice
+        getComputerChoice();
+        showPlayerChoice(playerChoice);
+        showComputerChoice(computerRoundChoice);
+        roundResult = compareChoices(playerChoice, computerRoundChoice);
+        updateCount(roundResult.scorePlayer, roundResult.scoreComputer);
+        roundStatusUpdate(roundResult.scorePlayer, roundResult.scoreComputer);
+        showWinner(currentPlayerScore, currentComputerScore);
+    });
+});
