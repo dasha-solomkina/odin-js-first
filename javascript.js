@@ -1,8 +1,3 @@
-// ask the player's name and update the name on the page
-/* let playerName = prompt("what is your name?")
-const playerNameJ = document.querySelector("#player-score");
-playerNameJ.textContent = playerName + ":"; 
-*/
 
 const choices = document.querySelectorAll(".column");
 const iconP = document.querySelector("#player-choice-img");
@@ -61,17 +56,17 @@ function compareChoices(player, computer) {
 
 // update the Total Score
 // and show the current score on the page
-let correntPlayerScore = 0;
-let correntComputerScore = 0;
+let currentPlayerScore = 0;
+let currentComputerScore = 0;
 const playerScoreN = document.querySelector("#player-score-n");
 const computerScoreN = document.querySelector("#computer-score-n");
 
 function updateCount(a, b) {
-    correntPlayerScore += a;
-    correntComputerScore += b;
-    playerScoreN.textContent = correntPlayerScore;
-    computerScoreN.textContent = correntComputerScore;
-    return [correntPlayerScore, correntComputerScore];
+    currentPlayerScore += a;
+    currentComputerScore += b;
+    playerScoreN.textContent = currentPlayerScore;
+    computerScoreN.textContent = currentComputerScore;
+    return [currentPlayerScore, currentComputerScore];
 };
 
 // update the status
@@ -96,11 +91,57 @@ choices.forEach((column) => {
         roundResult = compareChoices(playerChoice, computerRoundChoice);
         updateCount(roundResult.scorePlayer, roundResult.scoreComputer);
         roundStatusUpdate(roundResult.scorePlayer, roundResult.scoreComputer);
-        if(correntPlayerScore == 5) {
-            alert("you won!"); 
-        } else if (correntComputerScore == 5) {
-            alert("sorry, you lost")
-        };
+        showWinner(currentPlayerScore, currentComputerScore);
+        // if(currentPlayerScore == 5) {
+        //     alert("you won!"); 
+        // } else if (currentComputerScore == 5) {
+        //     alert("sorry, you lost")
+        // };
     });
 });
 
+
+
+window.onload = function() {
+    setTimeout(function() {
+      var popupOverlay = document.getElementById('popupOverlay');
+      popupOverlay.classList.remove('hidden');
+    }, 1000); // Adjust the delay (in milliseconds) as desired
+};
+  
+
+// Ask for the name and show on the page
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent page refresh
+  
+    // Retrieve the entered name
+    const name = document.getElementById('name').value;
+  
+    // Do something with the name (e.g., display it, store it, etc.)
+    const playerName = document.querySelector("#player-score");
+    playerName.textContent = name + ":";
+
+    //hide the popup
+    var popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.classList.add('hidden');
+});
+
+
+function showWinner(playerScore, computerScore) {
+    if (playerScore == 5) {
+        let popupOverlayTwo = document.getElementById('popupOverlay2');
+        popupOverlayTwo.classList.remove('hidden');
+        let result = document.querySelector("#result");
+        result.textContent = "You won! Congrats, well done!"
+    } else if (computerScore == 5) {
+        let popupOverlayTwo = document.getElementById('popupOverlay2');
+        popupOverlayTwo.classList.remove('hidden');
+        let result = document.querySelector("#result");
+        result.textContent = "Sorry, you lost"
+    }
+};
+
+const replayButton = document.querySelector("button");
+replayButton.addEventListener("click", function(e) {
+    location.reload();
+})

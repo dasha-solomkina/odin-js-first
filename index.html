@@ -11,18 +11,6 @@
     <link rel="icon" href="flaticon2.png">
 </head>
 <body>
-
-    <!-- Making the popup -->
-<div id="popupOverlay" class="hidden">
-    <div id="popupContent">
-        <h2>What is your name?</h2>
-        <p>Add the content here later</p>
-        <button id="closePopup">Close</button>
-    </div>
-</div>
-  
-<!-- end of the popup -->
-
 <div class="header"> 
     <h1>Rock Paper Scissors</h1> 
 </div>
@@ -69,7 +57,29 @@
 Designed by<a href="https://github.com/darialiit" target="_blank">@darialiit</a>
 </div>
 
+<!-- Pop up 1 -->
+<div id="popupOverlay" class="hidden">
+    <div id="popupContent">
+        <h2>What is your name?</h2>
+        <form id="myForm">
+            <input type="text" id="name" name="name" placeholder="Enter your name"> 
+            <input type="submit" value="Submit" id="name-submit">
+        </form>
+    </div>
+</div>
+    
+<!-- end of the popup -->
 
+
+<!-- Popup 2 -->
+<div id="popupOverlay2" class="hidden">
+    <div id="popupContent2">
+        <h2 id="result">Result</h2>
+        <button>Replay</button>
+    </div>
+</div>
+    
+<!-- end of the popup -->
 <script src="javascript.js"></script>
 
 </body>
