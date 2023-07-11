@@ -84,8 +84,7 @@ h1 {
     cursor: pointer;
     border-color: #a3246f;
     background-color:#a3246f ;
-  }
-
+}
 
 h4 {
     text-align: center;
@@ -108,11 +107,10 @@ a {
     margin: 16px;
 }
 
-/* Adding the pop-up */
 .hidden {
     display: none;
 }
-  
+
 #popupOverlay,
 #popupOverlay2 {
     position: fixed;
@@ -123,7 +121,7 @@ a {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9999;
 }
-  
+
 #popupContent,
 #popupContent2 {
     position: absolute;
