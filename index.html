@@ -1,76 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Bungee&display=swap" rel="stylesheet">
-    <link rel="icon" href="flaticon2.png">
-</head>
-<body>
-<div class="header"> 
-    <h1>Rock Paper Scissors</h1> 
-</div>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="flaticon2.png" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Rock Paper Scissors</h1>
+    </div>
 
-<div class="container">
-    <div class="status">
+    <div class="container">
+      <div class="status">
         <div id="status-update">
-            <h3><span id="status-update-text">Make your move!</span></h3>
+          <h3><span id="status-update-text">Make your move!</span></h3>
         </div>
         <div class="icons">
-            <div id="player-choice">
-                <img src="loading.png" alt="loading" id="player-choice-img">
-            </div>
-            <div id="computer-choice">
-                <img src="loading.png" alt="loading" id="computer-choice-img">
-            </div>
+          <div id="player-choice">
+            <img src="loading.png" alt="loading" id="player-choice-img" />
+          </div>
+          <div id="computer-choice">
+            <img src="loading.png" alt="loading" id="computer-choice-img" />
+          </div>
         </div>
         <div class="score">
-            <div>
-                <strong><span id="player-score">Player Score:</span> <span id="player-score-n"></span></strong>
-            </div>
-            <div id="computer-score">
-                <strong>Computer: <span id="computer-score-n"></span></strong>
-            </div>
+          <div>
+            <strong
+              ><span id="player-score">Player Score:</span>
+              <span id="player-score-n"></span
+            ></strong>
+          </div>
+          <div id="computer-score">
+            <strong>Computer: <span id="computer-score-n"></span></strong>
+          </div>
         </div>
+      </div>
+      <div class="choice-icons">
+        <div class="column">
+          <img src="rockw.png" alt="rock" />
+          <h4>Rock</h4>
+        </div>
+        <div class="column">
+          <img src="paperw.png" alt="paper" />
+          <h4>Paper</h4>
+        </div>
+        <div class="column">
+          <img src="scissorsw.png" alt="scissors" />
+          <h4>Scissors</h4>
+        </div>
+      </div>
     </div>
-    <div class="choice-icons">
-        <div class="column">
-            <img src="rockw.png" alt="rock">
-            <h4>Rock</h4>
-        </div>
-        <div class="column">
-            <img src="paperw.png" alt="paper">
-            <h4>Paper</h4>
-        </div>
-        <div class="column">
-            <img src="scissorsw.png" alt="scissors">
-            <h4>Scissors</h4>
-        </div>
-    </div>
-</div>
 
-<div class="footer">
-Designed by<a href="https://github.com/darialiit" target="_blank">@darialiit</a>
-</div>
-<div id="popupOverlay" class="hidden">
-    <div id="popupContent">
+    <div class="footer">
+      Designed by<a href="https://github.com/dasha-solomkina" target="_blank"
+        >@dasha-solomkina</a
+      >
+    </div>
+    <div id="popupOverlay" class="hidden">
+      <div id="popupContent">
         <h2>What is your name?</h2>
         <form id="myForm">
-            <input type="text" id="name" name="name" placeholder="Enter your name"> 
-            <input type="submit" value="Submit" id="name-submit">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+          />
+          <input type="submit" value="Submit" id="name-submit" />
         </form>
+      </div>
     </div>
-</div>
-<div id="popupOverlay2" class="hidden">
-    <div id="popupContent2">
+    <div id="popupOverlay2" class="hidden">
+      <div id="popupContent2">
         <h2 id="result">Result</h2>
         <button>Replay</button>
+      </div>
     </div>
-</div>
-<script src="javascript.js"></script>
-
-</body>
+    <script src="javascript.js"></script>
+  </body>
 </html>
